@@ -38,8 +38,16 @@ prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)
 time_format=$(tmux_get @tmux_power_time_format '%T')
 date_format=$(tmux_get @tmux_power_date_format '%F')
 
+# Default gradient colors
+G0="#262626"
+G1="#303030"
+G2="#3a3a3a"
+G3="#444444"
+G4="#626262"
+
 # short for Theme-Colour
 TC=$(tmux_get '@tmux_power_theme' 'gold')
+
 case $TC in
     'gold' )
         TC='#ffb86c'
@@ -74,7 +82,7 @@ case $TC in
         G1='#24283b'  # Dark background
         G2='#414868'  # Selection background
         G3='#565f89'  # Comments
-        G4='#a9b1d6'  # Foreground
+        G4='#c0caf5'  # Foreground
         ;;
     'tokyonight-storm' )
         TC='#7aa2f7'  # Tokyo Night Storm blue
@@ -82,7 +90,7 @@ case $TC in
         G1='#1f2335'  # Dark background
         G2='#414868'  # Selection background
         G3='#565f89'  # Comments
-        G4='#a9b1d6'  # Foreground
+        G4='#c0caf5'  # Foreground
         ;;
     'tokyonight-day' )
         TC='#2e7de9'  # Tokyo Night Day blue
@@ -94,6 +102,7 @@ case $TC in
         ;;
 esac
 
+# Allow user overrides
 G0=$(tmux_get @tmux_power_g0 "$G0")
 G1=$(tmux_get @tmux_power_g1 "$G1")
 G2=$(tmux_get @tmux_power_g2 "$G2")
