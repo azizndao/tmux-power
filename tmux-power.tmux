@@ -120,6 +120,15 @@ tmux_set status-attr none
 
 # tmux-prefix-highlight
 tmux_set @prefix_highlight_show_copy_mode 'on'
+tmux_set @prefix_highlight_empty_has_affixes 'on'
+tmux_set @prefix_highlight_empty_prompt 'Prefix'
+tmux_set @prefix_highlight_prefix_prompt 'Prefix'
+tmux_set @prefix_highlight_copy_prompt 'Copy'
+tmux_set @prefix_highlight_sync_prompt 'Sync'
+
+# Style for prefix highlight
+tmux_set @prefix_highlight_fg "$G0"
+tmux_set @prefix_highlight_bg "$TC"
 tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$G0,bold"
 tmux_set @prefix_highlight_output_prefix "#[fg=$TC]#[bg=$G0]$larrow#[bg=$TC]#[fg=$G0]"
 tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$G0]$rarrow"
@@ -129,9 +138,9 @@ tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$G0]$rarrow"
 tmux_set status-left-bg "$G0"
 tmux_set status-left-length 150
 
-# user@host
+# user@host with prefix indication
 if "$show_user" && "$show_host"; then
-    LS="#[fg=$G0,bg=$TC,bold] $user_icon $(whoami)@#h #[fg=$TC,bg=$G2,nobold]$rarrow"
+    LS="#{?client_prefix,#[fg=$G0]#[bg=$TC],#[fg=$G0]#[bg=$G4]}#[bold] $user_icon $(whoami)@#h #{?client_prefix,#[fg=$TC]#[bg=$G2],#[fg=$G4]#[bg=$G2]}#[nobold]$rarrow"
 elif "$show_user"; then
     LS="#[fg=$G0,bg=$TC,bold] $user_icon $(whoami) #[fg=$TC,bg=$G2,nobold]$rarrow"
 elif "$show_host"; then
