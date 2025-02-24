@@ -68,13 +68,37 @@ case $TC in
     'everforest' )
         TC='#a7c080'
         ;;
+    'tokyonight' )
+        TC='#7aa2f7'  # Tokyo Night blue
+        G0='#1a1b26'  # Background
+        G1='#24283b'  # Dark background
+        G2='#414868'  # Selection background
+        G3='#565f89'  # Comments
+        G4='#a9b1d6'  # Foreground
+        ;;
+    'tokyonight-storm' )
+        TC='#7aa2f7'  # Tokyo Night Storm blue
+        G0='#24283b'  # Background
+        G1='#1f2335'  # Dark background
+        G2='#414868'  # Selection background
+        G3='#565f89'  # Comments
+        G4='#a9b1d6'  # Foreground
+        ;;
+    'tokyonight-day' )
+        TC='#2e7de9'  # Tokyo Night Day blue
+        G0='#e1e2e7'  # Background
+        G1='#d5d6db'  # Dark background
+        G2='#9699a3'  # Selection background
+        G3='#6172b0'  # Comments
+        G4='#3760bf'  # Foreground
+        ;;
 esac
 
-G0=$(tmux_get @tmux_power_g0 "#262626")
-G1=$(tmux_get @tmux_power_g1 "#303030")
-G2=$(tmux_get @tmux_power_g2 "#3a3a3a")
-G3=$(tmux_get @tmux_power_g3 "#444444")
-G4=$(tmux_get @tmux_power_g4 "#626262")
+G0=$(tmux_get @tmux_power_g0 "$G0")
+G1=$(tmux_get @tmux_power_g1 "$G1")
+G2=$(tmux_get @tmux_power_g2 "$G2")
+G3=$(tmux_get @tmux_power_g3 "$G3")
+G4=$(tmux_get @tmux_power_g4 "$G4")
 
 # Status options
 tmux_set status-interval 1

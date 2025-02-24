@@ -60,7 +60,7 @@ set -g @tmux_power_theme 'snow'
 ```bash
 set -g @tmux_power_theme 'forest'
 ```
-Violet
+#### Violet
 ```bash
 set -g @tmux_power_theme 'violet'
 ```
@@ -68,6 +68,22 @@ set -g @tmux_power_theme 'violet'
 ```bash
 set -g @tmux_power_theme 'redwine'
 ```
+
+#### Tokyo Night (Dark)
+```bash
+set -g @tmux_power_theme 'tokyonight'
+```
+
+#### Tokyo Night Storm
+```bash
+set -g @tmux_power_theme 'tokyonight-storm'
+```
+
+#### Tokyo Night Day
+```bash
+set -g @tmux_power_theme 'tokyonight-day'
+```
+
 ### ⚙  Customizing
 
 You can define your favourite colors if you don't like any of above.
